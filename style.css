@@ -5,6 +5,7 @@
 
 :root {
   --bg-color: #30336b;
+  --bg-light: #f0f0f0;
   --primary-color: #9157c1;
   --secondary-color: #ffffff;
 }
@@ -43,7 +44,6 @@ body {
 }
 
 .card {
-  padding: 3em;
   position: relative;
   margin: 0 1.5em;
   background-color: var(--secondary-color);
@@ -51,33 +51,8 @@ body {
 }
 
 .card.active {
-  padding: 3em 4em;
   background-color: var(--primary-color);
   color: var(--secondary-color);
-}
-
-.card.active .title {
-  font-size: 2rem;
-}
-
-.card.active .circle {
-  height: 185px;
-  width: 185px;
-  background-color: var(--secondary-color);
-  color: var(--primary-color);
-}
-
-.card.active .price .currency {
-  font-size: 1.25rem;
-}
-
-.card.active .price .amount {
-  font-size: 2.5rem;
-}
-
-.card.active .items-container .item {
-  font-size: 1.15rem;
-  padding-left: 25px;
 }
 
 .card .recommended-sign {
@@ -101,65 +76,64 @@ body {
   font-weight: bold;
 }
 
-.card .icon {
-  height: 80px;
-  margin-bottom: 2em;
-}
-
-.card .icon.mvp {
-  background: url(./assets/mvp.png);
-  background-size: 40%;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.card .icon.basic {
-  background: url(./assets/basic.png);
-  background-size: 50%;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.card .icon.pro {
-  background: url(./assets/pro.png);
-  background-size: 22.5%;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.card .circle-container {
-  display: flex;
-  justify-content: center;
-}
-
 .card .circle {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius: 50%;
-  height: 150px;
-  width: 150px;
+  border-bottom-left-radius: 120%;
+  border-bottom-right-radius: 120%;
   background-color: var(--primary-color);
   color: var(--secondary-color);
-  box-shadow: 2px 5px 11px 0px #000000a3;
+  padding: 3em 1em;
+}
+
+.card.active .circle {
+  padding: 3em 1em 1.25em 1em;
 }
 
 .card .circle .title {
+  margin-bottom: 1em;
+}
+
+.card.active .circle .title {
+  font-size: 2.5rem;
   margin-bottom: 0.5em;
 }
 
 .card .circle .price {
   display: flex;
-  align-items: baseline;
+  align-items: flex-start;
 }
 
 .card .circle .price .currency {
   margin-right: 0.25em;
 }
 
+.card.active .circle .price .currency {
+  margin-top: 0.5em;
+  font-size: 1.25rem;
+}
+
+.card .circle .price .amount {
+  font-size: 3rem;
+}
+
+.card.active .circle .price .amount {
+  font-size: 5rem;
+}
+
+.card.active .items-container .item {
+  font-size: 1.15rem;
+  padding-left: 25px;
+}
+
 .card .items-container {
-  margin-top: 2em;
+  padding: 2em 3em;
+}
+
+.card.active .items-container {
+  padding: 0 4em 2em 4em;
 }
 
 .card .items-container .item {
@@ -193,4 +167,10 @@ body {
   background-size: 60%;
   background-repeat: no-repeat;
   background-position: 0px 2px;
+}
+
+.card.active .items-container .item.cancel::before,
+.card.active .items-container .item.check::before {
+  height: 35px;
+  width: 35px;
 }
