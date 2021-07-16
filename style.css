@@ -35,6 +35,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 0.5em;
 }
 
 .cards-container {
@@ -59,7 +60,7 @@ body {
   display: none;
 }
 
-.card .recommended-sign.active {
+.card.active .recommended-sign {
   display: block;
   position: absolute;
   top: -2%;
@@ -129,11 +130,11 @@ body {
 }
 
 .card .items-container {
-  padding: 2em 3em;
+  padding: 2.5em 3em;
 }
 
 .card.active .items-container {
-  padding: 0 4em 2em 4em;
+  padding: 0 4em 3em 4em;
 }
 
 .card .items-container .item {
