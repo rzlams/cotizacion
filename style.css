@@ -1,0 +1,196 @@
+@font-face {
+  font-family: varela-round;
+  src: url(./assets/VarelaRound-Regular.ttf);
+}
+
+:root {
+  --bg-color: #30336b;
+  --primary-color: #9157c1;
+  --secondary-color: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: varela-round;
+}
+
+body {
+  background: #56ccf2;
+  background: -webkit-linear-gradient(to right, #2f80ed, #56ccf2);
+  background: linear-gradient(to right, #2f80ed, #56ccf2);
+
+  /* background: #b2fefa;
+  background: -webkit-linear-gradient(to right, #0ed2f7, #b2fefa);
+  background: linear-gradient(to right, #0ed2f7, #b2fefa); */
+}
+
+.description-container {
+  height: 15vh;
+  padding: 1.75em;
+  font-size: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  padding: 3em;
+  position: relative;
+  margin: 0 1.5em;
+  background-color: var(--secondary-color);
+  box-shadow: 2px 5px 11px 0px #00000080;
+}
+
+.card.active {
+  padding: 3em 4em;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.card.active .title {
+  font-size: 2rem;
+}
+
+.card.active .circle {
+  height: 185px;
+  width: 185px;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+.card.active .price .currency {
+  font-size: 1.25rem;
+}
+
+.card.active .price .amount {
+  font-size: 2.5rem;
+}
+
+.card.active .items-container .item {
+  font-size: 1.15rem;
+  padding-left: 25px;
+}
+
+.card .recommended-sign {
+  display: none;
+}
+
+.card .recommended-sign.active {
+  display: block;
+  position: absolute;
+  top: -2%;
+  right: -2%;
+  background-color: orange;
+  border-radius: 50%;
+  color: white;
+  height: 60px;
+  width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: -1.5px;
+  font-weight: bold;
+}
+
+.card .icon {
+  height: 80px;
+  margin-bottom: 2em;
+}
+
+.card .icon.mvp {
+  background: url(./assets/mvp.png);
+  background-size: 40%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.card .icon.basic {
+  background: url(./assets/basic.png);
+  background-size: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.card .icon.pro {
+  background: url(./assets/pro.png);
+  background-size: 22.5%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.card .circle-container {
+  display: flex;
+  justify-content: center;
+}
+
+.card .circle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  box-shadow: 2px 5px 11px 0px #000000a3;
+}
+
+.card .circle .title {
+  margin-bottom: 0.5em;
+}
+
+.card .circle .price {
+  display: flex;
+  align-items: baseline;
+}
+
+.card .circle .price .currency {
+  margin-right: 0.25em;
+}
+
+.card .items-container {
+  margin-top: 2em;
+}
+
+.card .items-container .item {
+  position: relative;
+  padding-left: 15px;
+  margin-left: 25px;
+  margin-top: 0.5em;
+}
+
+.card .items-container .item.cancel::before {
+  content: '';
+  display: block;
+  height: 25px;
+  width: 25px;
+  position: absolute;
+  right: 100%;
+  background-image: url(./assets/cancel.png);
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: 0px 2px;
+}
+
+.card .items-container .item.check::before {
+  content: '';
+  display: block;
+  height: 25px;
+  width: 25px;
+  position: absolute;
+  right: 100%;
+  background-image: url(./assets/check.png);
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: 0px 2px;
+}
