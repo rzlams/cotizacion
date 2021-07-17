@@ -1,14 +1,48 @@
-'use strict'
-
+const translationPlaceholderIdentifier = '__'
 const activeClass = 'active'
+const language = 'es' // 'en' | 'es'
 const config = {
-  activePlan: 'pro', // 'mvp' | 'basic' | 'pro'
+  activePlan: 'basic', // 'mvp' | 'basic' | 'pro'
 }
 
-const cardItems = document.querySelectorAll('.card')
+;(async function () {
+  setActiveCard()
+  translate()
+})()
 
-Array.from(cardItems).forEach(function (card) {
-  const isActivePlan = card.classList.contains(config.activePlan)
+function setActiveCard() {
+  const cardItems = document.querySelectorAll('.card')
 
-  if (isActivePlan) card.classList.add(activeClass)
-})
+  Array.from(cardItems).forEach(function (card) {
+    const isActivePlan = card.classList.contains(config.activePlan)
+
+    if (isActivePlan) card.classList.add(activeClass)
+  })
+}
+
+async function translate() {
+  const body = document.querySelector('body')
+
+  await readDOMRecursively(body.children)
+}
+
+async function readDOMRecursively(elements) {
+  return new Promise(function (resolve) {
+    Array.from(elements).forEach(function (el) {
+      if (!el.hasChildNodes()) resolve()
+
+      replaceTranslationPlaceholder(el)
+      readDOMRecursively(el.children)
+    })
+  })
+}
+
+function replaceTranslationPlaceholder(element) {
+  const placeholder = Array.from(element.classList).find(function (elClass) {
+    return elClass.indexOf(translationPlaceholderIdentifier) === 0
+  })
+
+  if (placeholder) {
+    element.textContent = translations[placeholder][language]
+  }
+}
