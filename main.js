@@ -1,13 +1,13 @@
 const translationPlaceholderIdentifier = '__'
 const activeClass = 'active'
-const language = 'es' // 'en' | 'es'
 const config = {
   activePlan: 'basic', // 'mvp' | 'basic' | 'pro'
+  language: 'es', // 'en' | 'es'
 }
 
 ;(async function () {
   setActiveCard()
-  translate()
+  await translate()
 })()
 
 function setActiveCard() {
@@ -43,6 +43,6 @@ function replaceTranslationPlaceholder(element) {
   })
 
   if (placeholder) {
-    element.textContent = translations[placeholder][language]
+    element.textContent = translations[placeholder][config.language]
   }
 }

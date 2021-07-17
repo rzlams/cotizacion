@@ -134,7 +134,7 @@ body {
 }
 
 .card.active .items-container {
-  padding: 0 4em 3em 4em;
+  padding: 1em 4em 3em 4em;
 }
 
 .card .items-container .item {
