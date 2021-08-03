@@ -3,6 +3,11 @@
   src: url(./assets/VarelaRound-Regular.ttf);
 }
 
+@font-face {
+  font-family: spac3-tech;
+  src: url(./assets/Spac3-tech.ttf);
+}
+
 :root {
   --bg-color: #30336b;
   --bg-light: #f0f0f0;
@@ -25,6 +30,36 @@ body {
   /* background: #b2fefa;
   background: -webkit-linear-gradient(to right, #0ed2f7, #b2fefa);
   background: linear-gradient(to right, #0ed2f7, #b2fefa); */
+}
+
+#logo-agencia {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#logo-agencia > .logo {
+  font-family: spac3-tech;
+  font-size: 5em;
+  background: -webkit-linear-gradient(-90deg, #b25afa, #6e00c9, #1e0037);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#logo-agencia > .underline {
+  font-family: spac3-tech;
+  font-size: 1em;
+  line-height: 0;
+  letter-spacing: 2px;
+  color: #4c008b;
+}
+
+.logo-container {
+  position: fixed;
+  top: 2em;
+  left: 2em;
 }
 
 .description-container {

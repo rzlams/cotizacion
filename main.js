@@ -2,7 +2,7 @@ const translationPlaceholderIdentifier = '__'
 const activeClass = 'active'
 const config = {
   activePlan: 'basic', // 'mvp' | 'basic' | 'pro'
-  language: 'es', // 'en' | 'es'
+  language: 'en', // 'en' | 'es'
 }
 
 ;(async function () {
